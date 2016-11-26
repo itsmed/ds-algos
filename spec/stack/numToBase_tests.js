@@ -10,7 +10,7 @@ describe('numToBase', function() {
   });
   it('should convert a number to a base 2 string', function() {
     let n = 42;
-    expect(numToBase(2, 2)).to.equal(n.toString(2));
+    expect(numToBase(42, 2)).to.equal(n.toString(2));
   });
   it('should convert a number to a base 3 string', function() {
     let n = 42;
