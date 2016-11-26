@@ -20,18 +20,14 @@ class Stack {
   }
 
   pop() {
-    if (this.storage === 0) {
+    if (this.size === 0) {
       throw new Error('No elements in stack');
       return;
     }
     this.size--;
-    var i = 0,
-        temp = this.storage[0];
-    while (i < this.size) {
-      this.storage[i] = this.storage[i + 1];
-      delete this.storage[i + 1];
-      i++;
-    }
+    var temp = this.storage[this.size];
+    delete this.storage[this.size];
+
     return temp;
   }
 }
