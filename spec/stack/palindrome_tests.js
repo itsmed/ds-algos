@@ -27,13 +27,16 @@ describe('palindrome', function() {
   it('should return false for a palindrome if special characters get in the way', function() {
     expect(palindrome('never odd or even')).to.equal(false);
   });
-  it('should return false if the input is not a palindrome', function (done) {
-    expect(palindrome('135')).to.equal('false');
+  it('should return false if the input is not a palindrome', function () {
+    expect(palindrome('135')).to.equal(false);
+    expect(palindrome({})).to.equal(false);
+    expect(palindrome(1224221)).to.equal(false);
   });
-  it('should return false when the input is not a string', function (done) {
+  it('should return false when the input is not a string', function () {
     expect(palindrome([1, 2, 3, 2, 1])).to.equal(false);
+
   });
-  it('should return false when given a palindrome made of letters of varying case', function (done) {
+  it('should return false when given a palindrome made of letters of varying case', function () {
     expect(palindrome('Mom')).to.equal(false);
   });
 });
