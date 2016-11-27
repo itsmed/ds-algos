@@ -64,7 +64,8 @@ describe('Queue', function() {
       });
 
       it('should return the least recently added value when called', function () {
-
+        let temp = q.storage[0];
+        expect(q.dequeue()).to.equal(temp);
       });
     });
   });
