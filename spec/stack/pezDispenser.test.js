@@ -12,7 +12,7 @@ describe('PezDispenser', function() {
     expect(p instanceof Stack).to.equal(true);
   });
 
-  it('each instance should assign a random number of pez to storage', function() {
+  it('each instance should assign a random number of pez to storage\n*********** (This test should fail ocassionally as the number of pez is assigned randomly) *********', function() {
     let p1 = new PezDispenser();
     let p2 = new PezDispenser();
     let p3 = new PezDispenser();
@@ -30,7 +30,7 @@ describe('PezDispenser', function() {
       expect(p.fillDispenser instanceof Function).to.equal(true);
     });
 
-    it('should assign red, yellow and green pez to storage', function () {
+    it('should assign red, yellow and green pez to storage \n********** (This test should ocassionally fail, as the pez are being added randomly) *********', function () {
       let p = new PezDispenser();
       let found = [];
 
