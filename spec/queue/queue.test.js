@@ -69,6 +69,21 @@ describe('Queue', function() {
         expect(q.dequeue()).to.equal(temp);
       });
     });
-  });
 
+    describe('peek', function() {
+      it('should not modify the storage or length', function() {
+        let s = q.size;
+        q.peek();
+        q.peek();
+        q.peek();
+        q.peek();
+        expect(s).to.equal(q.size);
+      });
+
+      it('should return the next item to be dequeued', function (done) {
+        let temp = q.peek();
+        expect(temp).to.equal(q.dequeue());
+      });
+    });
+  });
 });
