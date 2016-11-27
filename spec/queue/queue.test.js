@@ -8,8 +8,8 @@ describe('Queue', function() {
       expect(typeof Queue === 'function').to.equal(true);
     });
 
-    it('should use an object for storage', function (done) {
-      expect(typeof q.storage === 'object').to.equal(true);
+    it('should use an array for storage', function (done) {
+      expect(Array.isArray(q.storage)).to.equal(true);
     });
 
     it('should have a property size, which is of type number', function() {
@@ -22,6 +22,10 @@ describe('Queue', function() {
 
     it('should have a method called dequeue', function (done) {
       expect(q.dequeue instanceof Function).to.equal(true);
+    });
+
+    it('should have a method called peek', function (done) {
+      expect(q.peek instanceof Function).to.equal(true);
     });
   });
 });
