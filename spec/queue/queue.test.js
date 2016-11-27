@@ -40,6 +40,14 @@ describe('Queue', function() {
       it('should increase the size when queue is called', function (done) {
         q.enqueue('a');
         expect(q.size).to.equal(1);
+        q.enqueue('b');
+        expect(q.size).to.equal(2);
+        q.enqueue('c');
+        expect(q.size).to.equal(3);
+      });
+
+      it('should not return a value', function (done) {
+        expect(q.enqueue('d')).to.equal(undefined);
       });
     });
   });
