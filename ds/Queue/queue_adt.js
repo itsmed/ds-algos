@@ -1,11 +1,12 @@
 class Queue {
   constructor() {
     this.storage = [];
-    this.size = this.storage.length;
+    this.size = 0;
   }
 
   enqueue(val) {
-
+    this.storage.push(val);
+    this.size++;
   }
 
   dequeue() {

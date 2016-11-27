@@ -37,7 +37,7 @@ describe('Queue', function() {
         expect(q.size).to.equal(0);
       });
 
-      it('should increase the size when queue is called', function (done) {
+      it('should increase the size when queue is called', function () {
         q.enqueue('a');
         expect(q.size).to.equal(1);
         q.enqueue('b');
@@ -46,7 +46,7 @@ describe('Queue', function() {
         expect(q.size).to.equal(3);
       });
 
-      it('should not return a value', function (done) {
+      it('should not return a value', function () {
         expect(q.enqueue('d')).to.equal(undefined);
       });
     });
