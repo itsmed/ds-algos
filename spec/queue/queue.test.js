@@ -28,4 +28,20 @@ describe('Queue', function() {
       expect(q.peek instanceof Function).to.equal(true);
     });
   });
+
+  describe('methods', function() {
+    describe('enqueue', function() {
+      let q = new Queue();
+
+      it('should begin with an empty storage', function() {
+        expect(q.size).to.equal(0);
+      });
+
+      it('should increase the size when queue is called', function (done) {
+        q.enqueue('a');
+        expect(q.size).to.equal(1);
+      });
+    });
+  });
+
 });
