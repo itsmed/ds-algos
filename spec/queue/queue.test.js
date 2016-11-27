@@ -16,6 +16,10 @@ describe('Queue', function() {
       expect(typeof q.size).to.equal('number');
     });
 
+      it('should begin with an empty storage', function() {
+        expect(q.size).to.equal(0);
+      });
+
     it('should have a method called enqueue', function () {
       expect(q.enqueue instanceof Function).to.equal(true);
     });
@@ -30,12 +34,8 @@ describe('Queue', function() {
   });
 
   describe('methods', function() {
+    let q = new Queue();
     describe('enqueue', function() {
-      let q = new Queue();
-
-      it('should begin with an empty storage', function() {
-        expect(q.size).to.equal(0);
-      });
 
       it('should increase the size when queue is called', function () {
         q.enqueue('a');
@@ -48,6 +48,23 @@ describe('Queue', function() {
 
       it('should not return a value', function () {
         expect(q.enqueue('d')).to.equal(undefined);
+      });
+    });
+
+    describe('dequeue', function() {
+      it('should decrease the size when called', function() {
+        q.dequeue();
+        expect(q.size).to.equal(3);
+        q.enqueue('d');
+        q.enqueue('e');
+        q.dequeue();
+        q.dequeue();
+        q.dequeue();
+        expect(q.size).to.equal(2);
+      });
+
+      it('should return the least recently added value when called', function () {
+
       });
     });
   });
