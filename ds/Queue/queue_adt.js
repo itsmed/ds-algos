@@ -15,7 +15,7 @@ class Queue {
   }
 
   peek() {
-
+    return this.storage[0];
   }
 }
 

@@ -80,7 +80,7 @@ describe('Queue', function() {
         expect(s).to.equal(q.size);
       });
 
-      it('should return the next item to be dequeued', function (done) {
+      it('should return the next item to be dequeued', function () {
         let temp = q.peek();
         expect(temp).to.equal(q.dequeue());
       });
