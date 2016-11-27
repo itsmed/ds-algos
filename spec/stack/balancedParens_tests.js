@@ -15,4 +15,42 @@ describe('balancedParens', function() {
     expect(balancedParens() instanceof Error).to.equal(true);
   });
 
+  it('should return true if passed an empty string', function() {
+    expect(balancedParens('')).to.equal(true);
+  })
+  it('should return true if parentheses are balanced', function () {
+    expect(balancedParens('[]')).to.equal(true);
+  });
+  it('should return true if parentheses are balanced', function () {
+    expect(balancedParens('{}')).to.equal(true);
+  });
+  it('should return true if parentheses are balanced', function () {
+    expect(balancedParens('()')).to.equal(true);
+  });
+  it('should return true if parentheses are balanced', function () {
+    expect(balancedParens('[{}]')).to.equal(true);
+  });
+  it('should return true if parentheses are balanced', function () {
+    expect(balancedParens('a(12 * arr[3]) + range([1, 2, 3])')).to.equal(true);
+  });
+  it('should return true if parentheses are balanced', function () {
+    expect(balancedParens('(12 * (2 * 2) + (function(a, b){ return a + b }(2, 3)))')).to.equal(true);
+  });
+
+  it('should return false if the string contains unbalanced parentheses', function() {
+    expect(balancedParens('([)')).to.equal(false);
+  });
+  it('should return false if the string contains unbalanced parentheses', function() {
+    expect(balancedParens('{[a, t}]')).to.equal(false);
+  });
+  it('should return false if the string contains unbalanced parentheses', function() {
+    expect(balancedParens('({[{[)]}])')).to.equal(false);
+  });
+  it('should return false if the string contains unbalanced parentheses', function() {
+    expect(balancedParens('[*9](12 *3{a: 12}])')).to.equal(false);
+  });
+  it('should return false if the string contains unbalanced parentheses', function() {
+    expect(balancedParens(']|[]()')).to.equal(false);
+  });
+
 });
