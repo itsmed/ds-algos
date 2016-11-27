@@ -10,7 +10,8 @@ class Queue {
   }
 
   dequeue() {
-
+    this.size--;
+    return this.storage.shift();
   }
 
   peek() {
