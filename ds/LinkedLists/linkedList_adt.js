@@ -21,6 +21,10 @@ class LinkedList {
   displayList() {
 
   }
+
+  findValue(target) {
+
+  }
 }
 
 module.exports = LinkedList;
