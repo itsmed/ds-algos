@@ -25,6 +25,10 @@ describe('Linked List', function() {
     it('should have a displayList method', function () {
       expect(l.displayList instanceof Function).to.equal(true);
     });
+
+    it('should have a findValue method', function (done) {
+      expect(l.findValue instanceof Function).to.equal(true);
+    });
   });
 
   describe('linked list methods', function() {
