@@ -4,7 +4,10 @@ class LinkedList {
   }
 
   createNode(val) {
-
+    return ({
+      value: val,
+      next: null
+    });
   }
 
   insertAfter(val, target) {

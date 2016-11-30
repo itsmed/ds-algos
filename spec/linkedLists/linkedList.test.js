@@ -26,4 +26,20 @@ describe('Linked List', function() {
       expect(l.displayList instanceof Function).to.equal(true);
     });
   });
+
+  describe('linked list methods', function() {
+    describe('createNode', function() {
+      let l = new LinkedList();
+      let newNode = l.createNode('hello');
+      it('should return an object', function() {
+        expect(newNode instanceof Object).to.equal(true);
+      });
+
+      it('should return an object with keys value and next', function () {
+
+        expect(newNode.hasOwnProperty('value')).to.equal(true);
+        expect(newNode.hasOwnProperty('next')).to.equal(true);
+      });
+    });
+  });
 });
