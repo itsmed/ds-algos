@@ -14,6 +14,10 @@ describe('Linked List', function() {
       expect(l.createNode instanceof Function).to.equal(true);
     });
 
+    it('should have a addToHead method', function () {
+      expect(l.addToHead instanceof Function).to.equal(true);
+    });
+
     it('should have an insertAfter method', function () {
       expect(l.insertAfter instanceof Function).to.equal(true);
     });
@@ -26,7 +30,7 @@ describe('Linked List', function() {
       expect(l.displayList instanceof Function).to.equal(true);
     });
 
-    it('should have a findValue method', function (done) {
+    it('should have a findValue method', function () {
       expect(l.findValue instanceof Function).to.equal(true);
     });
   });

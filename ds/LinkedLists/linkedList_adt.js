@@ -10,6 +10,10 @@ class LinkedList {
     });
   }
 
+  addToHead(node) {
+
+  }
+
   insertAfter(val, target) {
 
   }
