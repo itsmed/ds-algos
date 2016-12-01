@@ -10,6 +10,11 @@ describe('Linked List', function() {
       expect(typeof LinkedList).to.equal('function');
     });
 
+    it('the constructor should return an object', function () {
+      let l = new LinkedList(0);
+      expect(typeof l).to.equal('object');
+    });
+
     it('should have a createNode method', function () {
       expect(l.createNode instanceof Function).to.equal(true);
     });

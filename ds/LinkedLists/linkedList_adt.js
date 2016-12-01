@@ -1,6 +1,7 @@
 class LinkedList {
-  constructor() {
-
+  constructor(val) {
+    this.head = this.createNode(val);
+    return this;
   }
 
   createNode(val) {
