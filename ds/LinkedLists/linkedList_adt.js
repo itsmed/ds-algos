@@ -11,12 +11,14 @@ class LinkedList {
     });
   }
 
-  addToHead(node) {
-
-  }
-
-  insertAfter(val, target) {
-
+  insertAfter(target, val) {
+    let newNode = this.createNode(val);
+    let t = this.findValue(target);
+    if (t === false) {
+      return new Error('target not found, value not added to list');
+    } else {
+      t.next = newNode;
+    }
   }
 
   removeNode(target) {

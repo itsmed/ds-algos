@@ -19,10 +19,6 @@ describe('Linked List', function() {
       expect(l.createNode instanceof Function).to.equal(true);
     });
 
-    it('should have a addToHead method', function () {
-      expect(l.addToHead instanceof Function).to.equal(true);
-    });
-
     it('should have an insertAfter method', function () {
       expect(l.insertAfter instanceof Function).to.equal(true);
     });
@@ -64,6 +60,15 @@ describe('Linked List', function() {
       it('should return the node with the target value if it is in the list', function () {
         expect(l.findValue(0)).to.deep.equal(l.head);
       });
-    })
+    });
+
+    describe('insertAfter', function() {
+      let l = new LinkedList(0);
+      l.insertAfter(0, 1);
+      l.insertAfter(1, 2);
+      it('should insert a new node after the node with the given value', function() {
+        expect(l.head.next.value).to.equal(1);
+      })
+    });
   });
 });
