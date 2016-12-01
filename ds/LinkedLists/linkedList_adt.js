@@ -21,8 +21,17 @@ class LinkedList {
     }
   }
 
-  removeNode(target) {
+  removeNode(target, node = this.head) {
+    if (node.value === target) {
+      console.log('node', node);
+      delete this[node];
+      return;
+    }
+    if (node.next === null) {
+      return new Error('target node not found in list');
+    }
 
+    return this.removeNode(target, node.next);
   }
 
   displayList(node = this.head) {

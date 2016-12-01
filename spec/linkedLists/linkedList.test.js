@@ -12,7 +12,6 @@ describe('Linked List', function() {
     let l = new LinkedList();
 
     it('should be a function', function () {
-      console.log('ffsfsf', l instanceof Function);
       expect(typeof LinkedList).to.equal('function');
     });
 
@@ -102,5 +101,13 @@ describe('Linked List', function() {
         console.log.restore();
       });
     });
+
+    describe('removeNode', function() {
+      it('should return an error when the target value is not found in the list', function () {
+        let l = new LinkedList(1);
+
+        expect(l.removeNode(9) instanceof Error).to.equal(true);
+      });
+    })
   });
 });
