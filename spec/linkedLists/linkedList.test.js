@@ -62,7 +62,7 @@ describe('Linked List', function() {
       });
 
       it('should return the node with the target value if it is in the list', function () {
-        expect(l.find(0)).to.equal(l.head);
+        expect(l.findValue(0)).to.equal(l.head);
       });
     })
   });
