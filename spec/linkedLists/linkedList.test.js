@@ -54,5 +54,12 @@ describe('Linked List', function() {
         expect(newNode.hasOwnProperty('next')).to.equal(true);
       });
     });
+
+    describe('findValue', function() {
+      it('should return false if the value is not found in the list', function () {
+        let l = new LinkedList(0);
+        expect(l.findValue(9)).to.equal(false);
+      });
+    })
   });
 });
