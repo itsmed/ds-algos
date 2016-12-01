@@ -39,6 +39,10 @@ describe('Doubly Linked List', function() {
     it('should have a findValue method', function () {
       expect(l.findValue instanceof Function).to.equal(true);
     });
+
+    it('should have a findLast method', function () {
+      expect(l.findLast instanceof Function).to.equal(true);
+    });
   });
 
   describe('linked list methods', function() {
@@ -129,6 +133,14 @@ describe('Doubly Linked List', function() {
         expect(l.head.next.value).to.equal(2);
         expect(l.head.next.previous.value).to.equal(0);
       });
+    });
+
+    describe('findLast', function() {
+      it('should return the only element in the list when there is one item in the list', function() {
+        let l = new DoublyLinkedList(0);
+
+        expect(l.findLast()).to.deep.equal(l.head);
+      })
     });
   });
 });
