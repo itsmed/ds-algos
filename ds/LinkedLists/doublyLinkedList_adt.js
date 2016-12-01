@@ -38,6 +38,10 @@ class DoublyLinkedList extends LinkedList {
       t.previous.next = t.next;
     }
   }
+
+  findLast() {
+    return this.head;
+  }
 }
 
 module.exports = DoublyLinkedList;
