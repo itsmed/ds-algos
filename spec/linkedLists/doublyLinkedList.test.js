@@ -126,7 +126,8 @@ describe('Doubly Linked List', function() {
 
         l.removeNode(1);
 
-        expect(l.head.next).to.deep.equal({value: 2, next: null});
+        expect(l.head.next.value).to.equal(2);
+        expect(l.head.next.previous.value).to.equal(0);
       });
     });
   });
