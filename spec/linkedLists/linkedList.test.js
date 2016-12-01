@@ -108,6 +108,26 @@ describe('Linked List', function() {
 
         expect(l.removeNode(9) instanceof Error).to.equal(true);
       });
-    })
+
+      it('should remove the target node if it exists in the list', function() {
+        let l = new LinkedList(0);
+        l.insertAfter(0, 1);
+        l.insertAfter(1, 2);
+
+        l.removeNode(1);
+        l.displayList();
+        expect(l.findValue(1)).to.equal(false);
+      });
+
+      it('should maintain the order of the list', function () {
+        let l = new Linked(0);
+        l.insertAfter(0, 1);
+        l.insertAfter(1, 2);
+
+        l.removeNode(1);
+
+        expect(l.head.next).to.deep.equal({value: 2, next: null});
+      });
+    });
   });
 });
