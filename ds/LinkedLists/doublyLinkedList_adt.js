@@ -14,6 +14,8 @@ class DoublyLinkedList extends LinkedList {
   }
 }
 
+module.exports = DoublyLinkedList;
+
 
 var m = new DoublyLinkedList(0);
 
