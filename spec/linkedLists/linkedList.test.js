@@ -120,7 +120,7 @@ describe('Linked List', function() {
       });
 
       it('should maintain the order of the list', function () {
-        let l = new Linked(0);
+        let l = new LinkedList(0);
         l.insertAfter(0, 1);
         l.insertAfter(1, 2);
 

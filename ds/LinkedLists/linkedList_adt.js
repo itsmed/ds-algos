@@ -21,17 +21,25 @@ class LinkedList {
     }
   }
 
-  removeNode(target, node = this.head) {
-    if (node.value === target) {
-      console.log('node', node);
-      delete this[node];
-      return;
+  findPrevious(item) {
+    let currNode = this.head;
+
+    while(!(currNode.next == null) && (currNode.next.value !== item)) {
+      currNode = currNode.next;
     }
-    if (node.next === null) {
+    return currNode;
+  }
+
+  removeNode(target) {
+    var prevNode = this.findPrevious(target);
+
+    if (!(prevNode.next == null)) {
+      prevNode.next = prevNode.next.next;
+    }
+    else {
       return new Error('target node not found in list');
     }
 
-    return this.removeNode(target, node.next);
   }
 
   displayList(node = this.head) {
