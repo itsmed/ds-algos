@@ -56,13 +56,13 @@ describe('Linked List', function() {
     });
 
     describe('findValue', function() {
+      let l = new LinkedList(0);
       it('should return false if the value is not found in the list', function () {
-        let l = new LinkedList(0);
         expect(l.findValue(9)).to.equal(false);
       });
 
       it('should return the node with the target value if it is in the list', function () {
-        expect(l.findValue(0)).to.equal(l.head);
+        expect(l.findValue(0)).to.deep.equal(l.head);
       });
     })
   });
