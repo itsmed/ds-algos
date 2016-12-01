@@ -82,12 +82,24 @@ describe('Linked List', function() {
     });
 
     describe('displayList', function() {
-      it('should return each node in the list', function() {
-        let l = new LinkedList(0);
+      it('should log each node when there is one item in the list', function() {
         let mySpy = sinon.spy(console, 'log');
+        let l = new LinkedList(0);
         l.displayList();
 
         expect(mySpy).to.have.been.calledWith(l.head);
+        console.log.restore();
+      });
+
+      it('should log each node in the list when there is more than one item in the list', function () {
+        let mySpy = sinon.spy(console, 'log');
+        let l = new LinkedList(0);
+        l.insertAfter(0, 1);
+        l.insertAfter(1, 2);
+        l.displayList();
+
+        expect(mySpy.callCount).to.equal(3);
+        console.log.restore();
       });
     });
   });
