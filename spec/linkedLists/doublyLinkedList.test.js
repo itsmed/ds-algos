@@ -140,7 +140,14 @@ describe('Doubly Linked List', function() {
         let l = new DoublyLinkedList(0);
 
         expect(l.findLast()).to.deep.equal(l.head);
-      })
+      });
+
+      it('should return the last item in the list when there is more than one item in the list', function () {
+        let l = new DoublyLinkedList(0);
+        l.insertAfter(0, 1);
+
+        expect(l.findLast().value).to.equal(1);
+      });
     });
   });
 });
