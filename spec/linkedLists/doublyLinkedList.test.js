@@ -142,11 +142,20 @@ describe('Doubly Linked List', function() {
         expect(l.findLast()).to.deep.equal(l.head);
       });
 
-      it('should return the last item in the list when there is more than one item in the list', function () {
+      it('should return the last item in the list when there are two items in the list', function () {
         let l = new DoublyLinkedList(0);
         l.insertAfter(0, 1);
 
         expect(l.findLast().value).to.equal(1);
+      });
+
+      it('should return the last item when there are more than two items in the list', function () {
+        let l = new DoublyLinkedList(0);
+        l.insertAfter(0, 1);
+        l.insertAfter(1, 2);
+        l.insertAfter(2, 3);
+
+        expect(l.findLast().value).to.equal(3);
       });
     });
   });
