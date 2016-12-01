@@ -25,8 +25,12 @@ class LinkedList {
 
   }
 
-  displayList() {
-
+  displayList(node = this.head) {
+    console.log(node);
+    // if (node.next === null) {
+    //   return;
+    // }
+    // this.displayList(node.next);
   }
 
   findValue(target) {

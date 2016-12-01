@@ -1,5 +1,11 @@
 describe('Linked List', function() {
-  const { expect } = require('chai');
+  const chai = require('chai');
+  const expect = chai.expect;
+  const sinon = require('sinon');
+  const sinonChai = require('sinon-chai');
+
+  chai.use(sinonChai);
+
   const LinkedList = require('../../ds/LinkedLists/linkedList_adt');
 
   describe('constructor', function() {
@@ -68,13 +74,20 @@ describe('Linked List', function() {
       l.insertAfter(1, 2);
       it('should insert a new node after the node with the given value', function() {
         expect(l.head.next.value).to.equal(1);
-      })
+      });
+
+      it('should return an error if the target value is not in the list', function () {
+        expect(l.insertAfter(3, 5) instanceof Error).to.equal(true);
+      });
     });
 
     describe('displayList', function() {
       it('should return each node in the list', function() {
         let l = new LinkedList(0);
-        expect(l.displayList()).to.deep.equal({value: 0, next: null});
+        let mySpy = sinon.spy(console, 'log');
+        l.displayList();
+
+        expect(mySpy).to.have.been.calledWith(l.head);
       });
     });
   });
