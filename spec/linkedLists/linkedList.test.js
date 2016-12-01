@@ -70,5 +70,12 @@ describe('Linked List', function() {
         expect(l.head.next.value).to.equal(1);
       })
     });
+
+    describe('displayList', function() {
+      it('should return each node in the list', function() {
+        let l = new LinkedList(0);
+        expect(l.displayList()).to.deep.equal({value: 0, next: null});
+      });
+    });
   });
 });
