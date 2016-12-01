@@ -40,7 +40,12 @@ class DoublyLinkedList extends LinkedList {
   }
 
   findLast() {
-    return this.head;
+    let n = this.head;
+
+    while (n.next !== null) {
+      n = n.next;
+    }
+    return n;
   }
 }
 
