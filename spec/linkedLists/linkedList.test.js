@@ -60,6 +60,10 @@ describe('Linked List', function() {
         let l = new LinkedList(0);
         expect(l.findValue(9)).to.equal(false);
       });
+
+      it('should return the node with the target value if it is in the list', function () {
+        expect(l.find(0)).to.equal(l.head);
+      });
     })
   });
 });
